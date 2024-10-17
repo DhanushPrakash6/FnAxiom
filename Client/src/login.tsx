@@ -32,7 +32,7 @@ function Register() {
         <form className="form" onSubmit={handleSubmit}>
           <div className="title">
             Welcome,<br />
-            <span>Sign Up to Continue</span>
+            <span>Sign In to Continue</span>
           </div>
           <input
             className="input"
