@@ -12,19 +12,17 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('MongoDB connection error:', err);
     process.exit(1);
   });
 
-// Default route
-app.post('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.status(200).json({ message: 'Server Running Perfectly' });
 });
 
-// Register route
 app.post('/register', async (req, res) => {
   try {
     const { email, password } = req.body;
