@@ -3,6 +3,9 @@ const router = express.Router();
 const User = require('../Models/User');
 const jwt = require('jsonwebtoken');
 
+router.post('/', (req, res) => {
+  res.status(200).json({ message: 'Server Running Perfectly' });
+});
 router.post('/register', async (req, res) => {
   try {
     const { email, password } = req.body;
